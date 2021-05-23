@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<style type="text/css">
+	
+	
+	
+	
+
+
+	
+</style>
+</head>
+<body>
+	<div class="promo">
+		<div class="container">
+			<header class="header">
+				<a href="" class="header__logo">
+					<img src="icons/icon_1.png" alt="">
+				</a>
+				<div class="header__official">
+					Шилеков М.М.<br>
+					<span>ИС-941</span>
+				</div>
+				<div class="header__contacts">
+					<a href="" class="header__phone">Научно-исследовательская работа</a>
+					<!-- <button class="button">Звонок</button> -->
+				</div>
+			</header>
+			<div class="promo__wrapper">
+				<h1 class="promo__header">Симулятор ставок</h1>
+				<h2 class="promo__subheader">Kruto</h2>
+				<!-- <div class="promo__icons">
+					<div class="promo__icon">
+						<img src="icons/icon_1.png" alt="">
+						<div class="promo__icon_text">123</div>
+					</div>
+					<div class="promo__icon">
+						<img src="icons/icon_1.png" alt="">
+						<div class="promo__icon_text">123</div>
+					</div>
+					<div class="promo__icon">
+						<img src="icons/icon_1.png" alt="">
+						<div class="promo__icon_text">123</div>
+					</div>
+				</div> -->
+				 <a href="#catalog"> <button class="button button_main">Перейти к ставкам</button>
+				 </a>
+				
+				
+			</div>
+
+		</div>
+	</div>
+
+	<section class="manual">
+		<div class="container">
+			<div class="manual__header">Инструкция</div>
+			<div class="manual__subheader">Первым делом нажмите на кнопку "КОЭФФИЦЕНТ". Программа сгенерирует два случайных коэффициента для красной и синей команды. В коэффициент уже входит 5% от банка который букмекер заберет себе при любом исходе. Ваша задача выбрать на кого вы будите делать ставку и задать параметры. После ввода данных нажмите на кнопку «Рассчитать». Программа выведет сумму выигрыша, которую вы можете получить и построит график на котором визуально изображено, когда ваша ставка сыграла, а когда нет. Для того что бы более подробно ознакомиться со статистикой побед-поражений нажмите на кнопку F12 откройте Console. 1 – это победа, 0 – поражение. </div>
+			<div class="manual__icons">
+				<div class="manual__icon">
+					<img src="icons/icon_5.png" alt="">
+					<div class="manual__subheader">
+						Вариант 1
+					</div>
+					<div class="manual__text">Выбираем синюю команду. Выбираем стратегию. Задаем параметры. Смотрим на результат.</div>
+				</div>
+				<div class="manual__icon">
+					<img src="icons/icon_4.png" alt="">
+					<div class="manual__subheader">
+						Вариант 2
+					</div>
+					<div class="manual__text">Выбираем красную команду. Выбираем стратегию. Задаем параметры. Смотрим на результат.</div>
+				</div>
+				<div class="manual__icon">
+					<img src="icons/icon_6.png" alt="">
+					<div class="manual__subheader">
+						Вариант 3
+					</div>
+					<div class="manual__text">Выбираем свою команду. Выбираем стратегию. Пишем коэффициент. Задаем параметры. Смотрим на результат.</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="registration">
+		<div class="container">
+			<div class="registration__header">Зарегистрируйтесь сейчас</div>
+			<div class="registration__subheader">Если сможите ХD)</div>
+			<form class="feed-form" action="">
+				<input name="name" required placeholder="Ваше имя" type="text">
+				<input name="phone" required placeholder="Ваш телефон" type="number">
+				<input name="email" placeholder="E-mail" type="email">
+			</form>
+			<button class="button button_tow">Зарегистрироваться</button>
+		</div>
+	</section>
+	
+	<section class="catalog" id="catalog">
+
+		<div class="container">
+			<h2 class="catalog__title">Стратегии ставок</h2>
+			<h2 class="catalog__subtitle">Подсказка: Для того что бы сгенерировать коэффициент нажмите на кнопку.</h2>
+			<div class="catalog_button">
+				<button class="button button_center" type="submit" id="submit" onclick="alerted();">КОЭФФИЦИЕНТ</button>
+				<div class="catalog_tabs">
+					<div class="catalog_ta sum"><div>Красная команда</div></div> 
+					<div class="catalog_ta2 sum2"><div>Синяя команда</div></div>	
+				</div>
+					<h2 class="catalog__subtitle">Подсказка: Выберите на какую команду вы хотите сделать ставку.</h2>
+				<ul class="catalog_tabs">
+					<input class="catalog_tab" type="button" name="Button1" value="Красная команда" onclick="document.getElementById('window1').style.display='block'; document.getElementById('window2').style.display='none'; document.getElementById('window3').style.display='none';" />
+					<input class="catalog2_tab2" type="button" name="Button1" value="Синяя команда" onclick="document.getElementById('window2').style.display='block'; document.getElementById('window1').style.display='none'; document.getElementById('window3').style.display='none';" />
+					<input class="catalog3_tab3" type="button" name="Button1" value="Моя команда" onclick="document.getElementById('window3').style.display='block'; document.getElementById('window1').style.display='none'; document.getElementById('window2').style.display='none';" />										
+
+					
+				</ul>
+
+			</div>
+
+			<div style="display:none;" id="window1">
+				<ul class="catalog_tabs">
+					<li class="catalog_tab catalog_tab_activ"><div>Все стратегии </div></li>
+					<li class="catalog_tab"><div>Статичный флэт</div></li>
+					<li class="catalog_tab"><div>Динамичный флет</div></li>
+					<li class="catalog_tab"><div>Критерий Келли</div></li>
+				</ul>
+				<!-- Все стратегии -->
+
+				<div class="catalog_content catalog_content_active">
+					
+					<div class="container">
+						<div class="catalog_content_text">Все стратегии (красная команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="all_bet()">
+									<div class="text">Банк:</div>
+									<input id="Z" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="X"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="V" placeholder="%" type="number">
+									<div class="text">Свой прогноз:</div>
+									<input id="W" type="number" step="0.01" min="0" placeholder="0,00">
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статичный флэт - <div id="gold"></div> </p>   
+								<p id="time">Динамичный флет - <div id="gold2"></div> </p>
+								<p id="time">Критерий Келли - <div id="gold3"></div> </p> 
+							</div>
+
+						</div>
+						<div id="con"></div> 
+					</div>
+				</div>
+				<!--  -->
+
+				<!-- Статический флет  -->
+				<div class="catalog_content">
+
+					<div class="container">
+						<div class="catalog_content_text">Статичный флет (красная команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="fix_flet()">
+									<div class="text">Банк:</div>
+									<input id="A" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="B"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="D" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статический флет - <div id="gold_fix_flet"></div> </p>   
+							</div>
+
+						</div>
+						<div id="con_fix_flet"></div> 
+					</div>
+				</div>
+				<!--  -->
+				<!-- Динамический флет -->
+				<div class="catalog_content">
+					<div class="container">
+						<div class="catalog_content_text">Денамичный флет (красная команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="den_flet()">
+									<div class="text">Банк:</div>
+									<input id="P" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="O"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="I" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Динмичный флет - <div id="den_flet"></div> </p>   
+							</div>
+
+						</div>
+						<div id="con_den_flet"></div> 
+					</div>
+				</div>
+				<!--  -->
+				<!-- Критерий келли -->
+				<div class="catalog_content">
+					<div class="container">
+						<div class="catalog_content_text">Критерий Келли (красная команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="kel()">
+									<div class="text">Банк:</div>
+									<input id="bank" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month"placeholder="кол-во" type="number">
+									<div class="text">Прогноз:</div>
+									<input id="forecast" type="number" step="0.01" min="0" placeholder="0,00">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Критерий келли - <div id="kel"></div> </p>   
+							</div>
+
+						</div>
+						 <div id="the_kelly_criterion"></div>  
+					</div>
+				</div>
+				<!--  -->
+			</div>
+			<div style="display:none; " id="window2">
+
+				<ul class="catalog2_tabs2">
+					<li class="catalog2_tab2 catalog2_tab2_activ2"><div>Все стратегии</div></li>
+					<li class="catalog2_tab2"><div>Статичный флет</div></li>
+					<li class="catalog2_tab2"><div>Динамичный флет</div></li>
+					<li class="catalog2_tab2"><div>Критерий Келли</div></li>
+				</ul>
+				<!-- Все стратегии -->
+
+				<div class="catalog2_content2 catalog2_content2_active2">
+					
+					<div class="container">
+						<div class="catalog2_content2_text2">Все стратегии (синяя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="all_bet_2()">
+									<div class="text">Банк:</div>
+									<input id="bank_all" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_all"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="percent_all" placeholder="%" type="number">
+									<div class="text">Свой прогноз:</div>
+									<input id="forecast_all" type="number" step="0.01" min="0" placeholder="0,00">
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статичный флет - <div id="gold_2"></div> </p>   
+								<p id="time">Динамичный флет - <div id="gold2_2"></div> </p>
+								<p id="time">Критерий Келли - <div id="gold3_2"></div> </p> 
+							</div>
+
+						</div>
+						<div id="grafix_all_bet_2"></div> 
+					</div>
+				</div>
+				<!--  -->
+
+				<!-- Статический флет  -->
+				<div class="catalog2_content2">
+					<div class="container">
+						<div class="catalog2_content2_text2">Статичный флет (синяя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="fix_flet_2()">
+									<div class="text">Банк:</div>
+									<input id="bank_fix_flet_2" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_fix_flet_2"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="percet_fix_flet_2" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статичный флет - <div id="gold_fix_flet_2"></div> </p>   
+							</div>
+
+						</div>
+						<div id="grafix_fix_flet_2"></div> 
+					</div>
+				</div>
+				<!--  -->
+				<!-- Динамический флет -->
+				<div class="catalog2_content2">
+					<div class="container">
+						<div class="catalog2_content2_text2">Динамичный флет  (синяя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="den_flet_2()">
+									<div class="text">Банк:</div>
+									<input id="bank_den_flet_2" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_den_flet_2"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="percent_den_flet_2" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Динмичный флет - <div id="den_flet_2"></div> </p>   
+							</div>
+
+						</div>
+						<div id="grafix_con_den_flet"></div> 
+					</div>
+				</div>
+				<!--  -->
+				<!-- Критерий келли -->
+				<div class="catalog2_content2">
+					<div class="container">
+						<div class="catalog2_content2_text2">Критеррий Келли (синяя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="kel_2()">
+									<div class="text">Банк:</div>
+									<input id="bank_kel_2" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_kel_2"placeholder="кол-во" type="number">
+									<div class="text">Прогноз:</div>
+									<input id="forecast_kel_2" type="number" step="0.01" min="0" placeholder="0,00">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Критерий Келли - <div id="kel_2"></div> </p>   
+							</div>
+
+						</div>
+						 <div id="grafix_the_kelly_criterion_2"></div>  
+					</div>
+				</div>
+				<!--  -->
+			</div>
+
+			<div style="display:none; " id="window3">
+
+				<ul class="catalog3_tabs3">
+					<li class="catalog3_tab3 catalog3_tab3_activ3"><div>Все стратегии</div></li>
+					<li class="catalog3_tab3"><div>Статичный флет</div></li>
+					<li class="catalog3_tab3"><div>Динамичный флет</div></li>
+					<li class="catalog3_tab3"><div>Критерий Келли</div></li>
+				</ul>
+				<!-- Все стратегии -->
+
+				<div class="catalog3_content3 catalog3_content3_active3">
+					
+					<div class="container">
+						<div class="catalog3_content3_text3">Все стратегии (своя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="your_coefficient()">
+									<div class="text"> Коэффициент :</div>
+									<input id="ratio" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Банк:</div>
+									<input id="bank_ratio" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_ratio"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="percent_ratio" placeholder="%" type="number">
+									<div class="text">Свой прогноз:</div>
+									<input id="forecast_ratio" type="number" step="0.01" min="0" placeholder="0,00">
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статичный флет - <div id="gold_3"></div> </p>   
+								<p id="time">Динамичный флет - <div id="gold2_3"></div> </p>
+								<p id="time">Критерий Келли - <div id="gold3_3"></div> </p> 
+							</div>
+
+						</div>
+						<div id="grafix_your_coefficient"></div> 
+					</div>
+				</div>
+				<!--  -->
+
+				<!-- Статический флет  -->
+
+				<div class="catalog3_content3">
+					<div class="container">
+						<div class="catalog3_content3_text3">Статичный флет (своя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="your_coefficient_fix_flet()">
+									<div class="text">Коэффициент:</div>
+									<input id="ratio_fix_flet" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Банк:</div>
+									<input id="ratio_bank_fix_flet" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="ratio_mouth_fix_flet"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="ratio_percent_fix_flet" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Статичный флет - <div id="your_coefficient_fix_flet"></div> </p>   
+							</div>
+
+						</div>
+						<div id="grafix_your_coefficient_fix_flet"></div> 
+					</div>
+				</div> 
+				<!--  -->
+				<!-- Динамический флет -->
+				<div class="catalog3_content3">
+					<div class="container">
+						<div class="catalog3_content3_text3">Динамичный флет (своя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="your_coefficient_den_flet()">
+									<div class="text">Коэффициент:</div>
+									<input id="ratio_den_flet" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Банк:</div>
+									<input id="ratio_bank_den_flet" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="ratio_mouth_den_flet"placeholder="кол-во" type="number">
+									<div class="text">Процент от банка:</div>
+									<input id="ratio_percent_den_flet" placeholder="%" type="number">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выйгрыш:</div>
+								<p id="time">Динамичный флет - <div id="your_coefficient_den_flet"></div> </p>   
+							</div>
+
+						</div>
+						<div id="grafix_your_coefficient_den_flet"></div> 
+					</div>
+				</div> 
+				<!--  -->
+				<!-- Критерий келли -->
+				<div class="catalog3_content3">
+					<div class="container">
+						<div class="catalog3_content3_text3">Критерий Келли (своя команда)</div>
+						<div class="row">
+							<div class="col-sm">
+
+
+								
+								<form class="feed-form2" action="#" onsubmit="your_coefficient_kel()">
+									<div class="text">Коэффициент:</div>
+									<input id="ratio_kel" type="number" step="0.01" min="0" placeholder="0,00">
+
+									<div class="text">Банк:</div>
+									<input id="bank_ratio_kel" type="number" step="0.01" min="0" placeholder="0,00">
+									<div class="text">Число ставок:</div>
+									<input  id="month_ratio_kel"placeholder="кол-во" type="number">
+									<div class="text">Прогноз:</div>
+									<input id="forecast_ratio_kel" type="number" step="0.01" min="0" placeholder="0,00">
+									
+
+									<input class="button B" type="submit" value="Расчитать">
+
+								</form>
+
+							</div>
+							<div class="col-sm">
+								<div class="text">Выигрыш:</div>
+								<p id="time">Критерий Келли - <div id="your_coefficient_kel"></div> </p>   
+							</div>
+
+						</div>
+						 <div id="your_coefficient_kel_the_kelly_criterion"></div>  
+					</div>
+				</div> 
+				<!--  -->
+			</div>
+			
+
+		</div>
+	</section>
+	<!-- <section class="choice">
+		<div class="container">
+			<h2 class="choice__title">Выбор</h2>
+				<ul class="choice__tabs">
+					<li class="choice__tab choice__tab_active"><div>1</div></li>
+					<li class="choice__tab"><div>2</div></li>
+					<li class="choice__tab"><div>3</div></li>
+				</ul>
+		</div>
+		<div class="choice__content choice__content_active">
+			<div class="choice-item">
+					<div class="choice-item__wrapper">
+						<div class="choice-item__content choice-item__content_active ">
+							<img src="icons/watch_min.png" alt="" class="choice-item_img">
+							<div class="choice-item__subtitle">	Пульсометр Polar FT1</div>	
+							<div class="choice-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
+							<a href="" class="choice-item_link">ПОДРОБНЕЕ</a>
+						</div>
+						<ul class="choice-item_list ">
+							<li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;
+							</li>
+							<li>
+								Вы увидите информативный графический индикатор целевых тренировочных зон пульса;
+							</li>
+							<li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+							<li>Вы сможете посмотреть данные по 10 тренировкам.</li>
+						</ul>
+					</div>
+					<hr>
+					
+						
+						<div class="button button_mini">КУПИТЬ</div>
+					
+				</div>
+		</div>
+
+		<div class="choice__content choice__content_active">
+			<div class="choice-item">
+					<div class="choice-item__wrapper">
+						<div class="choice-item__content choice-item__content_active ">
+							<img src="icons/watch_min.png" alt="" class="choice-item_img">
+							<div class="choice-item__subtitle">	Пульсометр Polar FT1</div>	
+							<div class="choice-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
+							<a href="" class="choice-item_link">ПОДРОБНЕЕ</a>
+						</div>
+						<ul class="choice-item_list ">
+							<li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;
+							</li>
+							<li>
+								Вы увидите информативный графический индикатор целевых тренировочных зон пульса;
+							</li>
+							<li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+							<li>Вы сможете посмотреть данные по 10 тренировкам.</li>
+						</ul>
+					</div>
+					<hr>
+					
+						
+						<div class="button button_mini">КУПИТЬ</div>
+					
+				</div>
+		</div>
+
+		<div class="choice__content choice__content_active">
+			<div class="choice-item">
+					<div class="choice-item__wrapper">
+						<div class="choice-item__content choice-item__content_active ">
+							<img src="icons/watch_min.png" alt="" class="choice-item_img">
+							<div class="choice-item__subtitle">	Пульсометр Polar FT1</div>	
+							<div class="choice-item__descr">Для первых шагов в тренировках, основанных на сердечном ритме</div>
+							<a href="" class="choice-item_link">ПОДРОБНЕЕ</a>
+						</div>
+						<ul class="choice-item_list ">
+							<li>Вы услышите звуковое оповещение о нужном пульсе во время тренировки;
+							</li>
+							<li>
+								Вы увидите информативный графический индикатор целевых тренировочных зон пульса;
+							</li>
+							<li>Также Вы увидите информацию о расходе калорий за тренировку;</li>
+							<li>Вы сможете посмотреть данные по 10 тренировкам.</li>
+						</ul>
+					</div>
+					<hr>
+					
+						
+						<div class="button button_mini">КУПИТЬ</div>
+					
+				</div>
+		</div>
+	</section> -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+
+	<script src="js/script.js"></script>
+	<script src="js/script_bet.js"></script>
+</body>
+</html>
